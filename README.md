@@ -19,47 +19,49 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|string|null: false|
+|body|text| |
+|image|string| |
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
+- belongs_to :group
 
 ## users table
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index: true,null: false,foreign_key: true|
+|name|string|index: true,null: false|
 |email|string|null: false,unique: true|
 |user_id|integer|null: false,foreign_key: true|
 
 ### Association
 - has_many :messages
 - has_many :groups
-- belongs_to :member
+- has_many through: :members
 
 ## groups table
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|index: true, null: false, foreign_keys|
+|name|string|index: true, null: false|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
+- has_many :messages
 - has_many through: :members
 
 ## members table
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index: true,null: false, foreign_keys: true|
-|group_name|string|index: true,null: false, foreign_keys: true|
-|member_id|integer|null: false,unique: true|
+|user_id|integer|null: false, foreign_keys: true|
+|group_id|integer|null: false, foreign_keys: true|
 
 ### Association
 - belongs_to :group
+- belongs_to :user
 
 -----------------------------------------------------------------
 * Database initialization
