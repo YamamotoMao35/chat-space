@@ -33,13 +33,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true,null: false|
-|email|string|null: false,unique: true|
+|email|string| |
 |user_id|integer|null: false,foreign_key: true|
 
 ### Association
 - has_many :messages
-- has_many :groups
-- has_many through: :members
+- has_many :groups, through: :members
 
 ## groups table
 
@@ -50,7 +49,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :messages
-- has_many through: :members
+- has_many :users, through: :members
 
 ## members table
 
