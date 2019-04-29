@@ -13,6 +13,8 @@ Things you may want to cover:
 
 * Database creation
 
+-----------------------------------------------------------------
+
 ## messages table
 
 |Column|Type|Options|
@@ -59,6 +61,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 
+-----------------------------------------------------------------
 * Database initialization
 
 * How to run the test suite
