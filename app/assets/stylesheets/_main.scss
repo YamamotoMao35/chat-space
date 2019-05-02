@@ -11,6 +11,19 @@
   border-bottom: #eeeeee;
 }
 
+.current-group{
+  font-size: 20px;
+  color: #333;
+  margin-top: 35px;
+}
+
+.member-list {
+  display: flex;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #999999;
+}
+
 .messages {
   height: calc(100vh - 190px);
   padding: 46px 40px;
