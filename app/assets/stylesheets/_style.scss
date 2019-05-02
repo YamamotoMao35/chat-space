@@ -7,7 +7,7 @@ html {
   background: $fontWhite;
 }
 
-body, h1, h2, h3, h4, h5, h6, p {
+body, h1, h2, h3, h4, h5, h6, p, li {
   margin: 0;
   padding: 0;
 }
@@ -48,26 +48,4 @@ div {
   justify-content: space-between;
   width: 100%;
   font-weight: bold;
-}
-
-.user-memu {
-  display: flex;
-}
-
-.groups {
-  height: calc(100vh - 100px);
-  background-color: #2f3e51;
-  padding: 20px 20px 0;
-  overflow: scroll;
-}
-
-.group {
-  margin-bottom: 40px;
-  &__group-name {
-    font-size: 15px;
-    margin-bottom: 5px;
-  }
-  &__latest-messages {
-    font-size: 11px;
-  }
 }
