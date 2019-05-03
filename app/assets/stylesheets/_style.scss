@@ -23,6 +23,9 @@ div {
   font-weight: lighter;
   text-align: center;
   width: 100vw;
+  .notice{
+    background-color: $fontBtn
+  }
 }
 
 .chat-side {
