@@ -2,48 +2,6 @@
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, li {
-  margin: 0;
-  padding: 0;
-}
-
 a {
   text-decoration: none;
-}
-
-div {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-.flash-box {
-  color: $fontWhite;
-  font-size: 1rem;
-  font-weight: lighter;
-  text-align: center;
-  width: 100vw;
-  .notice{
-    background-color: $fontBtn
-  }
-}
-
-.chat-side {
-  width: 300px;
-  color: $fontWhite;
-  float: left;
-  a {
-    color: $fontWhite;
-  }
-}
-
-.side-header {
-  background-color: $sideColor;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  justify-content: space-between;
-  width: 100%;
-  font-weight: bold;
 }
