@@ -9,6 +9,14 @@
   display: flex;
   justify-content: space-between;
   border-bottom: #eeeeee;
+  &__edit-btn {
+    margin-top: 28px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    border: solid 1px $fontBtn;
+    color: $fontBtn;
+  }
 }
 
 .current-group{
