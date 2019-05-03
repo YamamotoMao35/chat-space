@@ -1,0 +1,34 @@
+.flash-box
+  .notice グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      %p.side-header__user-name Mihou
+      %ul.user-menu
+        %li.user-menu__edit-user
+          = link_to root_path do
+            %i.fa.fa-edit
+        %li.user-menu__new-group
+          = link_to root_path do
+            %i.fa.fa-cog
+    .groups
+      =render partial: "messages/group"
+  .chat-main
+    .main-header
+      .current-group
+        %h2.current-group__name test
+        %ul.member-list
+          Member：
+          %li.member-list__member Mihou
+      = link_to root_path do
+        .main-header__edit-btn Edit
+    .messages
+      =render partial: "messages/message"
+    .form
+      .write-down
+        .input-box
+          %input{type: "text", name: "message-content", class: "input-box__text", placeholder: "type a message"}
+          %label{class: "image-label", for: "message-image"}
+            %i.fa.fa-image
+            %input{type: "file", name: "upload-image", class: "image-label__input", id: "message-image" }
+        %input{type: "submit", name: "commit", value: "Send", class: "write-down__send-btn" }
