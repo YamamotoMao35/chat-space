@@ -7,7 +7,7 @@
     .wrapper
       .chat-side
         .side-header
-          %p.side-header__user-name 山本真央
+          %p.side-header__user-name Mihou
           %ul.user-menu
             %li.user-menu__edit-user
               %a{:href => "/"}
@@ -16,9 +16,7 @@
               %a{:href => "/"}
                 %i.fa.fa-cog
         .groups
-          %a{:href => "/"}
-            %p.group__group-name みほうプログラミング
-            %p.group__latest-messages おはよう
+          =render partial: "messages/group"
       .chat-main
         .main-header
           .current-group
@@ -29,10 +27,7 @@
           %a{:href => "/"}
             .main-header__edit-btn Edit
         .messages
-          .message-info
-            .message-info__user Mihou
-            .message-info__date 2019/05/03(Fri) 12:12:12
-          %p.messages__text 睡眠は大切
+          =render partial: "messages/message"
         .form
           .write-down
             .input-box
