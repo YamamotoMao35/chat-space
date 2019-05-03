@@ -37,4 +37,7 @@
           .write-down
             .input-box
               %input{:type => "text", :name => "message-content", :class => "input-box__text", :placeholder => "type a message"}
+              %label{:class => "image-label", :for => "message-image"}
+                %i.fa.fa-image
+                %input{:type => "file", :name => "upload-image", :class => "image-label__input", :id => "message-image" }
             %input{:type => "submit", :name => "commit", :value => "Send", :class => "write-down__send-btn" }
