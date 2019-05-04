@@ -3,7 +3,8 @@
 .wrapper
   .chat-side
     .side-header
-      %p.side-header__user-name Mihou
+      %p.side-header__user-name
+        = current_user.name
       %ul.user-menu
         %li.user-menu__new-group
           = link_to root_path do
