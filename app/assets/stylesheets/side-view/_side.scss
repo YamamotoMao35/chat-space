@@ -1,20 +1,17 @@
 .flash-box {
-  color: $side-text-color;
+  color: $white;
   font-size: 1rem;
   font-weight: lighter;
   text-align: center;
   width: 100vw;
-  .notice{
-    background-color: $btn-color
-  }
 }
 
 .chat-side {
   width: 300px;
-  color: $side-text-color;
+  color: $white;
   float: left;
   a {
-    color: $side-text-color;
+    color: $white;
   }
 }
 
