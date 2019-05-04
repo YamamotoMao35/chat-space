@@ -2,7 +2,7 @@
   width: 980px;
   margin: 60px auto;
   padding: 40px;
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
@@ -48,8 +48,8 @@
   &__action-btn {
     display: inline-block;
     padding: 12px 20px;
-    color: #fff;
-    background-color: #38aef0;
+    color: $white;
+    background-color: $light-blue;
     border: 0;
   }
 
@@ -80,32 +80,28 @@
 }
 
 
-  .chat-group-user {
-    padding: 0 15px;
-    line-height: 50px;
-    font-size: 14px;
-    border-bottom: 1px solid #ddd;
-    &:after {
-      content: "";
-      clear: both;
-      display: block;
+.chat-group-user {
+  padding: 0 15px;
+  line-height: 50px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  &__name {
+    float: left;
+  }
+  &__btn {
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    &--add {
+      color: $light-blue
     }
-
-    .chat-group-user__name {
-      float: left;
-    }
-
-    .chat-group-user__btn {
-      float: right;
-      display: inline-block;
-      cursor: pointer;
-
-      &.chat-group-user__btn--add {
-        color: #38aef0;
-      }
-
-      &.chat-group-user__btn--remove {
-        color: #f05050;
-      }
+    &_btn--remove {
+      color: #f05050;
     }
   }
+}
