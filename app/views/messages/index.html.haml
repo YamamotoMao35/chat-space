@@ -13,7 +13,8 @@
           = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
     .groups
-      =render partial: "messages/group"
+      .group
+        =render partial: "groups/group"
   .chat-main
     .main-header
       .current-group
