@@ -14,8 +14,8 @@
     height: 40px;
     line-height: 40px;
     padding: 0 20px;
-    border: solid 1px $btn-color;
-    color: $btn-color;
+    border: solid 1px $light_blue;
+    color: $light_blue;
   }
 }
 
@@ -69,8 +69,8 @@
       height: 50px;
       padding: 0 30px;
       margin-left: 15px;
-      background-color: $btn-color;
-      color: $side-text-color;
+      background-color: $light_blue;
+      color: $white;
       cursor: pointer;
     }
   }
