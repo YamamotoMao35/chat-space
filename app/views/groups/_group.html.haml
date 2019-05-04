@@ -1,3 +1,6 @@
-= link_to root_path do
-  %p.group__group-name みほうプログラミング
-  %p.group__latest-messages 睡眠は大切
+- current_user.groups.each do |group|
+  = link_to group_messages_path(group) do
+    .group__group-name
+      = group.name
+    .group__latest-messages
+      睡眠は大切
