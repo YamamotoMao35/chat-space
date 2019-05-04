@@ -3,13 +3,13 @@
   margin: 60px auto;
   padding: 40px;
   background-color: $white;
-  border: 1px solid #ddd;
+  border: 1px solid $border-color;
   border-radius: 5px;
   box-sizing: border-box;
   &__errors {
     margin: 30px 0;
     padding: 20px 40px;
-    border: 1px solid #ddd;
+    border: 1px solid $border-color;
     border-radius: 2px;
     text-align: center;
   }
@@ -84,7 +84,7 @@
   padding: 0 15px;
   line-height: 50px;
   font-size: 14px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $border-color;
   &:after {
     content: "";
     clear: both;
