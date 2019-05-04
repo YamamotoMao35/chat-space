@@ -61,7 +61,7 @@
 .form {
   height: 90px;
   padding: 20px 40px;
-  background-color: #ddd;
+  background-color: $border-color;
   .write-down {
     display: flex;
     &__send-btn {
