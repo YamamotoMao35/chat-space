@@ -44,7 +44,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index: true, null: false|
+|name|string|index: true,unique: true,null: false|
 
 ### Association
 - has_many :messages
