@@ -12,7 +12,7 @@
       = link_to edit_group_path(params[:group_id]) do
         .main-header__edit-btn Edit
     .messages
-      =render partial: "messages/message"
+      =render @messages
     .form
       .write-down
         .input-box
