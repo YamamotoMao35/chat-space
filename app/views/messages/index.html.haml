@@ -9,7 +9,7 @@
         %ul.member-list
           Member：
           %li.member-list__member Mihou
-      = link_to root_path do
+      = link_to edit_group_path(params[:group_id]) do
         .main-header__edit-btn Edit
     .messages
       =render partial: "messages/message"
