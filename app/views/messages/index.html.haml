@@ -12,12 +12,14 @@
       = link_to edit_group_path(params[:group_id]) do
         .main-header__edit-btn Edit
     .messages
-      =render partial: "messages/message"
+      =render @messages
     .form
       .write-down
         .input-box
-          %input{type: "text", name: "message-content", class: "input-box__text", placeholder: "type a message"}
-          %label{class: "image-label", for: "message-image"}
-            %i.fa.fa-image
-            %input{type: "file", name: "upload-image", class: "image-label__input", id: "message-image" }
-        %input{type: "submit", name: "commit", value: "Send", class: "write-down__send-btn" }
+          = form_for [@group, @message] do |f|
+            = f.text_field :body, class: "input-box__text", placeholder: "type a message"
+            .form__mask
+              = f.label :image, class: "image-label" do
+                %i.fa.fa-image
+                = f.file_field :image, class: "image-label__input"
+            = f.submit "Send", class: "write-down__send-btn"
