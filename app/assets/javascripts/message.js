@@ -1,7 +1,6 @@
 $(function(){
   function buildHTML(message){
     if ( message.image ) {
-      console.log(message.image.name)
       var html = `<div class="message">
                     <div class="message-info">
                       <div class="message-info__user">
