@@ -39,6 +39,11 @@
   overflow: scroll;
   .message {
     padding-bottom: 40px;
+    &__text {
+      font-size: 14px;
+      color: $chat-color;
+      margin-bottom: 10px;
+    }
   }
   .message-info {
     margin-bottom: 10px;
@@ -54,27 +59,12 @@
       margin-left: 10px;
     }
   }
-  &__text {
-    font-size: 14px;
-    color: $chat-color;
-    margin-bottom: 10px;
-  }
 }
 
 .form {
   height: 90px;
   padding: 20px 40px;
   background-color: $border-color;
-  .write-down {
-    &__send-btn {
-      width: 100px;
-      height: 50px;
-      padding: 0 30px;
-      background-color: $light_blue;
-      color: $white;
-      cursor: pointer;
-    }
-  }
   .new_message {
     display: flex;
     .input-box {
@@ -87,17 +77,27 @@
         color: $chat-color;
         border-style: none;
       }
-    }
-    .image-label {
-      position: relative;
-      font-size: 1.3rem;
-      top: 10px;
-      right: 25px;
-      cursor: pointer;
-      &__input {
-        display: none;
+      .form__mask {
+        .image-label {
+          font-size: 1.3rem;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          &__input {
+            display: none;
+          }
+        }
       }
+    }
+    &__submit-btn {
+      width: 100px;
+      height: 50px;
+      padding: 0 30px;
+      margin-left: 15px;
+      background-color: $light_blue;
+      color: $white;
+      cursor: pointer;
     }
   }
 }
-
