@@ -4,26 +4,26 @@ $(function(){
       var html = `<div class="message">
                     <div class="message-info">
                       <div class="message-info__user">
-                        ${message.user.name}
+                        ${message.user_name}
                       </div>
                       <div class="message-info__date">
-                        ${message.date}
+                        ${message.created_at}
                       </div>
                     </div>
-                    <p class="messages__text">
+                    <p class="message__text">
                       ${message.body}
                     </p>
-                    <asset_path src=${message.image} >
+                    <asset_path src= ${message.image} >
                   </div>`
       return html;
     } else {
       var html = `<div class="message">
                     <div class="message-info">
                       <div class="message-info__user">
-                      ${message.user.name}
+                        ${message.user_name}
                       </div>
                       <div class="message-info__date">
-                      ${message.date}
+                        ${message.created_at}
                       </div>
                     </div>
                     <p class="messages__text">
@@ -35,12 +35,12 @@ $(function(){
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    var message = new FormData(this);
+    var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
       url: url,
       type: "POST",
-      data: message,
+      data: formData,
       dataType: 'json',
       processData: false,
       contentType: false
@@ -48,8 +48,12 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.messages').animate({scrollTop: $('.message')[0].sctollHeight}, 'fast');
-      $('.textbox').val('');
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      $('#new_message').get(0).reset();
     })
+    .fail(function(){
+      alert('error');
+    });
+    return false;
   })
 })
