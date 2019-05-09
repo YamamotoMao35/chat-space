@@ -1,6 +1,7 @@
 $(function(){
   function buildHTML(message){
     if ( message.image ) {
+      console.log(message.image.name)
       var html = `<div class="message">
                     <div class="message-info">
                       <div class="message-info__user">
@@ -13,7 +14,7 @@ $(function(){
                     <p class="message__text">
                       ${message.body}
                     </p>
-                    <asset_path src= ${message.image} >
+                    <img src=${message.image} %>
                   </div>`
       return html;
     } else {
