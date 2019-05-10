@@ -9,8 +9,9 @@
           = @group.name
         %ul.member-list
           Member：
-          %li.member-list__member
-            = current_user.name
+          - @group.users.each do |user|
+            %li.member-list__member
+              = user.name
       = link_to edit_group_path(params[:group_id]) do
         .main-header__edit-btn Edit
     .messages
