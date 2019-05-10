@@ -9,8 +9,7 @@
           = @group.name
         %ul.member-list
           Member：
-          %li.member-list__member
-            = current_user.name
+          =render partial: "member-list"
       = link_to edit_group_path(params[:group_id]) do
         .main-header__edit-btn Edit
     .messages
