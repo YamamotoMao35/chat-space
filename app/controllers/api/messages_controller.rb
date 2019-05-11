@@ -1,9 +1,8 @@
 class Api::MessagesController < ApplicationController
   def index
-    @messages = Message.where('name LIKE(?)', "%#{"data-message_id"}%")
     respond_to do |format|
       format.html
-      format.json
+      format.json {@messages = Message.where('id > ?', params[:id])}
     end
   end
 end
