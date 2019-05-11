@@ -1,7 +1,9 @@
 $(function(){
   function buildHTML(message){
-    if ( message.body && message.image.url) {
-      var html = `<div class="message", data-message_id="${message.id}" >
+    var bodyHTML = (message.body) ? `<p class="message__text">${message.body}</p>`: ""
+    var imageHTML = (message.image.url) ? `<img src="${message.image.url}">`: ""
+
+    var html = `<div class="message", data-message_id="${message.id}" >
                     <div class="message-info">
                       <div class="message-info__user">
                         ${message.user_name}
@@ -10,38 +12,9 @@ $(function(){
                         ${message.created_at}
                       </div>
                     </div>
-                    <p class="message__text">
-                      ${message.body}
-                    </p>
-                    <img src="${message.image.url}">
+                    ${bodyHTML}
+                    ${imageHTML}
                   </div>`
-    } else if (message.body) {
-      var html = `<div class="message", data-message_id="${message.id}">
-                    <div class="message-info">
-                      <div class="message-info__user">
-                        ${message.user_name}
-                      </div>
-                      <div class="message-info__date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <p class="message__text">
-                      ${message.body}
-                    </p>
-                  </div>`
-    } else if (message.image.url) {
-      var html = `<div class="message", data-message_id="${message.id}">
-                    <div class="message-info">
-                      <div class="message-info__user">
-                        ${message.user_name}
-                      </div>
-                      <div class="message-info__date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <img src="${message.image.url}">
-                  </div>`
-    };
     return html;
   };
 
