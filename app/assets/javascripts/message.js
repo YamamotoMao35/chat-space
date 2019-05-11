@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     if ( message.body && message.image.url) {
-      var html = `<div class="message", data-message-id="${message.id}" >
+      var html = `<div class="message", data-message_id="${message.id}" >
                     <div class="message-info">
                       <div class="message-info__user">
                         ${message.user_name}
@@ -16,7 +16,7 @@ $(function(){
                     <img src="${message.image.url}">
                   </div>`
     } else if (message.body) {
-      var html = `<div class="message", data-message-id="${message.id}">
+      var html = `<div class="message", data-message_id="${message.id}">
                     <div class="message-info">
                       <div class="message-info__user">
                         ${message.user_name}
@@ -30,7 +30,7 @@ $(function(){
                     </p>
                   </div>`
     } else if (message.image.url) {
-      var html = `<div class="message", data-message-id="${message.id}">
+      var html = `<div class="message", data-message_id="${message.id}">
                     <div class="message-info">
                       <div class="message-info__user">
                         ${message.user_name}
@@ -91,5 +91,11 @@ $(function(){
       alert('自動更新に失敗しました');
     });
   };
-  setInterval(reloadMessages, 5000);
+
+  var pageUrl = $(location).attr('pathname')
+  if ( pageUrl.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 5000);
+  } else {
+    clearInterval();
+  };
 });
