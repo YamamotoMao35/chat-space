@@ -26,7 +26,7 @@ $(function(){
                         ${message.created_at}
                       </div>
                     </div>
-                    <p class="messages__text">
+                    <p class="message__text">
                       ${message.body}
                     </p>
                   </div>`
@@ -56,6 +56,52 @@ $(function(){
     });
     return false;
   });
+
+  var buildMessageHTML = function(message) {
+    if ( message.body && message.image.url) {
+      var hrml = `<div class="message", data-message-id="${message.id}" >
+                    <div class="message-info">
+                      <div class="message-info__user">
+                        ${message.user_name}
+                      </div>
+                      <div class="message-info__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <p class="message__text">
+                      ${message.body}
+                    </p>
+                    <img src="${message.image.url}">
+                  </div>`
+    } else if (message.body) {
+      var html = `<div class="message", data-message-id="${message.id}">
+                    <div class="message-info">
+                      <div class="message-info__user">
+                        ${message.user_name}
+                      </div>
+                      <div class="message-info__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <p class="message__text">
+                      ${message.body}
+                    </p>
+                  </div>`
+    } else if (message.image.url) {
+      var html = `<div class="message", data-message-id="${message.id}">
+                    <div class="message-info">
+                      <div class="message-info__user">
+                        ${message.user_name}
+                      </div>
+                      <div class="message-info__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <img src="${message.image.url}">
+                  </div>`
+    };
+    return html;
+  };
 
   var reloadMessages = function() {
     last_message_id = $("#data-message_id").val();
