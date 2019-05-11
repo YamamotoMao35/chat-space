@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    if ( message.image ) {
+    if ( message.image.url ) {
       var html = `<div class="message">
                     <div class="message-info">
                       <div class="message-info__user">
@@ -13,7 +13,7 @@ $(function(){
                     <p class="message__text">
                       ${message.body}
                     </p>
-                    <img src=${message.image} >
+                    <img src="${message.image.url}" >
                   </div>`
       return html;
     } else {
@@ -55,5 +55,22 @@ $(function(){
       alert('error');
     });
     return false;
-  })
-})
+  });
+
+  var reloadMessages = function() {
+    last_message_id = $("#data-message_id").val();
+    console.log(last_message_id)
+    $.ajax({
+      url: '/api/messages',
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      console.log('success');
+    })
+    .fail(function() {
+      console.log('error');
+    });
+  };
+});
