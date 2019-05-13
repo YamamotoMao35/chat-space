@@ -54,10 +54,17 @@ $(function(){
 
     .done(function(users) {
       search_result.empty();
-      if (users.length !== 0) {
-        users.forEach(function(user){
-          appendUser(user);
-        });
+      var group_members = $('.chat-group-user__name').text();
+      if (users.length !== 0 ) {
+        if (input !== ""){
+          users.forEach(function(user, index){
+            if (group_members.indexOf(user.name) == -1){
+              appendUser(user)
+            } else if(index == users.length -1 && search_result.text() == ""){
+              appendErrMsgToHTML("一致するユーザーはいません");
+            }
+          });
+        }
       }
       else {
         appendErrMsgToHTML("一致するユーザーはいません");
